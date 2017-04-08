@@ -12,7 +12,7 @@ class Stock;
 class Renderer;
 class Field;
 
-class Player : public Observer, Character {
+class Player : public Observer, public Character {
 private:
     World * world;
     Stock stock;

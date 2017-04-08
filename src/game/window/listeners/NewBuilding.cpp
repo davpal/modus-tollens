@@ -21,6 +21,6 @@ void NewBuilding::perform() {
             building = std::move(std::make_unique<Quarry>(field));
         break;
     }
-    field->takeOwnership((Character *) getOwner());
+    field->takeOwnership(static_cast<Character *>(getOwner()));
     field->addBuilding(std::move(building));
 }

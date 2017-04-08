@@ -7,7 +7,7 @@ sf::Sprite FertilityMode::getSprite(Field * field) const {
     sf::Sprite sprite;
 
     if (field->getKind() == "meadow") {
-        Meadow *meadow = (Meadow *) field;
+        Meadow *meadow = static_cast<Meadow *>(field);
         if (meadow->getSoil().getName() != "") {
             green += meadow->getSoil().getFertility() * 2;
         } else {

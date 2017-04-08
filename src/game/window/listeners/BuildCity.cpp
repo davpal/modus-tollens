@@ -9,7 +9,7 @@ void BuildCity::perform() {
     Field * city  = new City(field->getX(), field->getY(), field->getWorld());
     field->getWorld()->setField(field->getId(), city);
     getFieldSelector()->setSelectedField(city);
-    city->takeOwnership((Character *) player);
+    city->takeOwnership(static_cast<Character *>(player));
 }
 
 BuildCity::BuildCity(FieldSelector *fieldSelector, Player * player) : fieldSelector(fieldSelector), player(player) {}

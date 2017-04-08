@@ -7,7 +7,7 @@ sf::Sprite TreesMode::getSprite(Field * field) const {
     sf::Sprite sprite;
 
     if (field->getKind() == "forest") {
-        Forest *forest = (Forest *) field;
+        Forest *forest = static_cast<Forest *>(field);
         green += forest->getTreesCount() / 4;
         if(forest->getTreesCount() == 0) {
             red = 200;
